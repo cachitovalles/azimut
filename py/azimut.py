@@ -37,7 +37,8 @@ arduino = serial.Serial('/dev/serial0', 9600)
 while True:
   comando = sol
   arduino.write(comando)
-  
+arduino.close()
+
 print(sol)
 print(luna)
 print(sun_az)
