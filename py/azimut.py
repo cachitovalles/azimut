@@ -28,7 +28,10 @@ moonrise = ephem.localtime(home.next_rising(moon)).strftime(format)
 moonset  = ephem.localtime(home.next_setting(moon)).strftime(format)
 full_moon = ephem.localtime(ephem.next_full_moon(home.date)).strftime(format)
 
+sol = round(23/(360/sun_az))
+luna = round(23/(360/moon_az))
 
-
+print(sol)
+print(luna)
 print(sun_az)
 print(moon_az)
