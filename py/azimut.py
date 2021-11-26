@@ -1,3 +1,4 @@
+import serial
 import datetime
 import ephem
 from math import degrees as deg
@@ -31,6 +32,12 @@ full_moon = ephem.localtime(ephem.next_full_moon(home.date)).strftime(format)
 sol = round(23/(360/sun_az))
 luna = round(23/(360/moon_az))
 
+arduino = serial.Serial('/dev/serial0', 9600)
+
+while True:
+  comando = sol
+  arduino.write(comando)
+  
 print(sol)
 print(luna)
 print(sun_az)
